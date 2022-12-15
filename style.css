@@ -3,7 +3,7 @@
 body {
     background-color: snow;
     color: rgb(187, 8, 8);
-    min-height: 100vh;
+    min-height: 100%;
     cursor: url("https://drive.google.com/uc?id=1lXdwHT60G4jFO2C9sJH7I2qSiF2YrGff"), default;
 }
 
@@ -11,7 +11,7 @@ body {
 h1 {
     font-family: 'Mountains of Christmas', cursive;
     text-align: center;
-    font-size: 5rem;
+    font-size: 2rem;
 }
 
 section.maria_est_belle {
@@ -25,7 +25,13 @@ pre {
 }
 
 pre.maria_est_la_plus_forte {
-    font-size: xx-large;
+    font-size: small;
+}
+
+@media screen and (min-width:720) {
+    pre.maria_est_la_plus_forte {
+        font-size: xx-large;
+    }
 }
 
 a {
@@ -67,8 +73,17 @@ span.boule {
 
 
 #decompte {
-    font-size: x-large;
+    font-size: small;
     justify-content: center;
     width: 100vw;
     display: none;
+}
+
+@media screen and (min-width:720) {
+    #decompte {
+        font-size: initial;
+        justify-content: center;
+        width: 100vw;
+        display: none;
+    }
 }
