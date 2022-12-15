@@ -1,3 +1,5 @@
+const userName = prompt("Coucou ! C'est quoi ton p'tit nom ?");
+document.getElementById("christmasTitle").innerHTML += userName + " !";
 var snow = {
 
     wind: 2,
@@ -6,7 +8,7 @@ var snow = {
     maxSpeed: 3,
     minSpeed: 1,
     color: "rgb(237, 139, 139)",
-    char: "maria",
+    char: userName,
     maxSize: 20,
     minSize: 8,
 
