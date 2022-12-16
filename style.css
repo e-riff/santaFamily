@@ -28,9 +28,9 @@ pre.maria_est_la_plus_forte {
     font-size: small;
 }
 
-@media screen and (min-width:720) {
+@media screen and (min-width:720px) {
     pre.maria_est_la_plus_forte {
-        font-size: xx-large;
+        font-size: large;
     }
 }
 
@@ -79,7 +79,7 @@ span.boule {
     display: none;
 }
 
-@media screen and (min-width:720) {
+@media screen and (min-width:720px) {
     #decompte {
         font-size: initial;
         justify-content: center;

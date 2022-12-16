@@ -1,5 +1,13 @@
-const userName = prompt("Coucou ! C'est quoi ton p'tit nom ?");
+userName = prompt("Coucou ! C'est quoi ton p'tit nom ?");
+if (!userName) {
+    userName = "buddy";
+}
 document.getElementById("christmasTitle").innerHTML += userName + " !";
+
+window.onload = function () {
+    snow.init(20);
+};
+
 var snow = {
 
     wind: 2,
@@ -90,16 +98,22 @@ var snow = {
 
 
 
-// a key map of allowed keys
+/********************
+ * Konami
+*********************/
+
+/// a key map of allowed keys
 var allowedKeys = {
-    77: 'm',
+    37: 'left',
+    38: 'up',
+    39: 'right',
+    40: 'down',
     65: 'a',
-    82: 'r',
-    73: 'i',
+    66: 'b'
 };
 
 // the 'official' Konami Code sequence
-var konamiCode = ['m', 'a', 'r', 'i', 'a'];
+var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
 // a variable to remember the 'position' the user has reached so far.
 var konamiCodePosition = 0;
@@ -130,6 +144,11 @@ document.addEventListener('keydown', function (e) {
 function activateCheats() {
     alert("Joyeux Noël");
 }
+
+
+/********************
+ * Couleur des boules
+*********************/
 
 const boules = document.getElementsByClassName("boule");
 let color = [1, "yellow", "red", "green", "blue", "brown", "violet"]
@@ -176,11 +195,14 @@ for (let lapin of lapins) {
 };
 
 
+/********************
+ * T'as tout cassé
+*********************/
+
 function reload() {
     document.body.style.display = "initial";
     alert("t'as tout cassé !")
 }
-
 
 const oups = document.getElementById("oups");
 oups.addEventListener("click", function () {
@@ -188,6 +210,38 @@ oups.addEventListener("click", function () {
     setTimeout(reload, 3000);
 });
 
+
+/********************
+ * Changements flocons
+*********************/
+
+const flocons = document.getElementById("flocons");
+let isSnowfalinkg = false;
+flocons.addEventListener("click", function () {
+    console.log(isSnowfalinkg);
+    if (!isSnowfalinkg) {
+        snow.wind = 5;
+        const floconsSpan = document.querySelectorAll("span.truc");
+        for (let flocon of floconsSpan) {
+            flocon.innerHTML = "*";
+            isSnowfalinkg = true;
+        }
+    } else {
+        snow.wind = 1;
+        const floconsSpan = document.querySelectorAll("span.truc");
+        for (let flocon of floconsSpan) {
+            flocon.innerHTML = userName;
+            isSnowfalinkg = false;
+        }
+    }
+});
+
+
+
+
+/********************
+ * Compte à rebours
+*********************/
 
 var cible = new Date('December 25, 2022 00:00:00');
 var time = parseInt(cible.getTime() / 1000, 10);
