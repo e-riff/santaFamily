@@ -1,8 +1,10 @@
-userName = prompt("Coucou ! C'est quoi ton p'tit nom ?");
-if (!userName) {
-    userName = "buddy";
-}
+userName = "buddy";
+// userName = prompt("Coucou ! C'est quoi ton p'tit nom ?");
 document.getElementById("christmasTitle").innerHTML += userName + " !";
+
+/********************
+ * Il neige
+*********************/
 
 window.onload = function () {
     snow.init(20);
@@ -95,7 +97,6 @@ var snow = {
     }
 
 };
-
 
 
 /********************
@@ -237,8 +238,6 @@ flocons.addEventListener("click", function () {
 });
 
 
-
-
 /********************
  * Compte à rebours
 *********************/
@@ -272,4 +271,3 @@ decompte();
 document.getElementById("decompteNoel").addEventListener("click", function () {
     document.getElementById("decompte").style.display = "flex";
 });
-
