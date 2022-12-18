@@ -170,7 +170,6 @@ const miaou = document.getElementById("miaou");
 let couikcouik = 0;
 for (let lapin of lapins) {
     lapin.addEventListener("click", function () {
-        console.log(couikcouik);
         if (couikcouik == 0) {
             couikcouik++;
             miaou.style.display = "initial";
@@ -219,7 +218,6 @@ oups.addEventListener("click", function () {
 const flocons = document.getElementById("flocons");
 let isSnowfalinkg = false;
 flocons.addEventListener("click", function () {
-    console.log(isSnowfalinkg);
     if (!isSnowfalinkg) {
         snow.wind = 5;
         const floconsSpan = document.querySelectorAll("span.truc");
@@ -270,4 +268,19 @@ decompte();
 
 document.getElementById("decompteNoel").addEventListener("click", function () {
     document.getElementById("decompte").style.display = "flex";
+});
+
+
+/********************
+ * Compte à rebours
+*********************/
+let isAlreadyFin = false;
+document.getElementById("top").addEventListener("click", function () {
+    fetch('https://api.blablagues.net/?rub=blagues&cat=devinettes')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            document.getElementById("blague").innerHTML = json?.data?.content?.text_head + "<br>" + json?.data?.content?.text + "<br>" + json?.data?.content?.text_hidden;
+        });
 });
