@@ -1,5 +1,7 @@
-userName = "buddy";
 userName = prompt("Coucou ! C'est quoi ton p'tit nom ?");
+if (userName === null) {
+    userName = "buddy";
+}
 document.getElementById("christmasTitle").innerHTML += userName + " !";
 
 /********************
