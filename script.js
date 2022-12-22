@@ -274,7 +274,7 @@ document.getElementById("decompteNoel").addEventListener("click", function () {
 
 
 /********************
- * Compte à rebours
+ * blagues
 *********************/
 let isAlreadyFin = false;
 document.getElementById("top").addEventListener("click", function () {
